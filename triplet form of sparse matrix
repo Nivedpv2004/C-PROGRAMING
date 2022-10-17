@@ -1,0 +1,73 @@
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int m,n,k=0,p=1;
+    printf("Enter the row and col of the sparse matrix: ");
+    scanf("%d %d",&m,&n);
+
+    int a[m][n];
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            printf("a[%d][%d] : ",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if(a[i][j]!=0)
+            {
+                k++;
+            }
+        }
+    }
+
+    int b[k+1][n];
+
+    printf("Triplet Form is : \n");
+    
+    b[0][0] = m;
+    
+    b[0][1]=n;
+    
+    b[0][2]=k;
+    
+    
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+           if(a[i][j]!=0)
+           {
+            b[p][0]=i;
+            b[p][1]=j;
+            b[p][2]=a[i][j];
+            p++;
+
+           }
+        }
+        
+    }
+
+    for(int i=0;i<k+1;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+          printf("%d ",b[i][j]);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
