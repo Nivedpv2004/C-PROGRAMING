@@ -1,163 +1,35 @@
-#include <stdio.h>
+#include<stdio.h>
 
-void add ();
-void sub ();
-void mul ();
-void div ();
-void sqr ();
-void prime_factorization ();
-void factorial ();
-void sel_func (int);
-
-int main (void)
+int main()
 {
-        int s;
-    
-        Input:
-           printf("Input a number [ +(1), -(2), *(3), /(4), ^(5), prime factorization(6), !(7)] : ");
-           scanf("%d",&s);
-         
-           if (s > 7 | s < 1){
-                  printf("Please input again\n");
-                  goto Input;
-           }
-           sel_func (s);
-    
-           goto Input;
-}
-
-void sel_func (int s)
-{
-        void (*fptr)(void);
-        switch (s){
+    printf("1.addtion\n2.subtraction\n3.multiplication\n4.division\n5.modulus\n,6.exit\n");
+    int a,b,c;
+    printf("enter the value of a and b:\t");
+    scanf("%d%d",&a,&b);
+    printf("enter the choice");
+    scanf("%d",&c);
+    switch(c)
+    {
         case 1:
-                fptr = add;
-                break;
+        printf("addtion of a and b is %d",a+b);
+        break;
         case 2:
-                fptr = sub;
-                break;
+        printf("subtraction of a and b is %d",a-b);
+        break;
         case 3:
-                fptr = mul;
-                break;
+        printf("multiplication of a and b is %d",a*b);
+        break;
         case 4:
-                fptr = div;
-                break;
+        printf("division of a and b is %d",a/b);
+        break;
         case 5:
-                fptr = sqr;
-                break;
+        printf("modulus of a and b is %d",a%b);
+        break;
         case 6:
-                fptr = prime_factorization;
-                break;
-        case 7:
-                fptr = factorial;
-                break;        
-        }
-    
-        fptr();
-}
-
-void add ()
-{
-        int a, b;
-        
-        printf("Input two numbers : ");
-        scanf("%d%d", &a,&b);
-        printf("Result = %d\n", a + b);
-}
-
-void sub ()
-{
-        int a, b;
-        
-        printf("Input two numbers : ");
-        scanf("%d%d", &a,&b);
-        printf("Result = %d\n" , a - b);
-}
-
-void mul ()
-{
-        int a, b;
-      
-        printf("Input two numbers : ");
-        scanf("%d%d", &a,&b);
-        printf("Result = %d\n", a * b);
-}
-
-void div ()
-{
-        int a, b;
-        
-        printf("Input two numbers : ");
-        scanf("%d%d", &a,&b);
-        printf("Result = %d\n", a / b);
-}
-
-void sqr (){
-        int exp, base, i;
-        int result = 1;
-    
-        printf("Input base : ");
-        scanf("%d",&base);
-        printf("Input exp : ");
-        scanf("%d",&exp);
-    
-        for (i = 0; i < exp; ++i)
-                result *= base;
-            
-        printf("%d^%d = %d\n",
-                    base,exp,result);
-}
-
-void prime_factorization ()
-{
-        int n; 
-        while (1){ 
-                printf("Input a number : "); 
-                scanf("%d",&n); 
-       
-             if(n < 2)
-                    return; 
-        }
-        
-        int p = 2; 
-        int primes[20]; 
-        int index = 0; 
-        int i; 
-        
-        while (1 != n){ 
-                if (0 == (n%p)){ 
-                        n = n/p; 
-                        primes[index] = p; 
-                        ++index; 
-                        p = 2; 
-                } else {
-                    ++p;
-                }
-        } 
-        
-        if(1 == index){
-                printf("Prime number\n"); 
-        } else { 
-                for (i = 0; i < index - 1; ++i)
-                        printf("%d*", primes[i]);
-
-                printf("%d\n", primes[i]);
-          }  
-        
-          return;    
-        
-}
-
-void factorial ()
-{
-        int a, b;
-        int sum = 1;
-    
-        printf("Input a number : ");
-        scanf("%d", &b);
-    
-        for (a = 1; a <= b; ++a)
-                    sum *= a;
-        
-        printf("%d!=%d\n",b,sum);
+        printf("exit");
+        break;
+        default:
+        printf("invalid choice");
+    }
+    return 0;
 }
