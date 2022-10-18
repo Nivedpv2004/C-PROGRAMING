@@ -20,3 +20,4 @@ towers(discs-1,from,aux,to);
 printf("\nMove disk %d from %c to %c",discs,from,to);
 towers(discs-1,aux,to,from);
 }
+
