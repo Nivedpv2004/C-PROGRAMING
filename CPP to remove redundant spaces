@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main() {
+   char string[50];
+   int i=0, j, check;
+   printf("Enter any statement: ");
+   gets(string);
+   while(string[i]!='\0') {
+      check=0;
+      if(string[i]==' ') {
+         j=i;
+         while(string[j-1]!='\0') {
+            string[j] = string[j+1];
+            j++;
+         }
+         check = 1;
+      }
+      if(check==0)
+      i++;
+   }
+   printf("
+Sentence without spaces: %s", string);
+   getch();
+     return 0;
+}
