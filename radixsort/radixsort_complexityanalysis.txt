@@ -1,0 +1,7 @@
+Best Case time complexity - Omega(n+k)
+Average case complexity - Theta(nk)
+Worst Case Complexity - Big O(nk)
+
+Space Complexity - O(n+k)
+
+Radix sort is a stable sorting technique which mean that the relative positions of two equal numbers in the array remain the same.
